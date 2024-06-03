@@ -1,0 +1,258 @@
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-image: url('../assets/bg.gif');
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 500;
+}
+
+.centered-hor {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.border {
+    background-color: #cccccc;
+    border-top: 1.5px solid var(--border-light);
+    border-right: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
+    border-left: 1.5px solid var(--border-light);
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+}
+
+.fullsize {
+    width: 100%;
+}
+
+.navbar {
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+    position: relative;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+}
+
+.button__links {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger img {
+    height: 35px;
+}
+
+a {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .button {
+        width: 200px;
+    }
+
+    .navbar__right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar__right.active {
+        position: relative;
+        top: 104px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .navbar__links {
+        display: none;
+
+    }
+
+    .navbar__links.active {
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+
+        position: relative; 
+        margin: 0;
+
+        top: 4px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+.intro {
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page {
+    width: 400px;
+    height: 400px;
+
+    margin: 30px;
+}
+
+.outline {
+    border: 1px solid #cccccc;
+}
+
+.app {
+    background-color: var(--backgroundpage);
+
+    padding: 8px;
+    color: white;
+}
+
+.app_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 330px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 4px 10px;
+    text-align: justify;
+    color: black;
+    line-height: 1.4;
+}
+
+.app_filler {
+    font-size: 0.8rem;
+    font-weight: 200;
+    margin: 5px;
+}
+
+.app_filler span {
+    padding: 5px;
+}
+
+.introimage img {
+    height: 350px; 
+    margin: 30px;
+}
+
+.app_content_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app_content_links a {
+    aspect-ratio: 1 / 1;
+    width: 40px;
+    padding: 3px;
+    margin: 0px 5px;
+
+    border: 1px solid black;
+    border-radius: 10%;
+}
+
+.app_content_links img {
+    width: 40px;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+    }
+
+    .introimage {
+        height: 200px;
+    }
+
+    .introimage img {
+        height: auto;
+    }
+
+    .page {
+        width: auto;
+    }
+}
+
+.app_filler_tabs {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--lightsmallborder);
+    height: 17px;
+    padding: 2px 0;
+
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.app_filler_tabs span {
+    margin: 0 5px;
+}
+
+.app_filler_tabs span::first-letter {
+    text-decoration: underline;
+}
+
+.app_filler_address {
+    display: flex;
+    align-items: center;
+
+    padding: 2px;
+    height: 19px;
+
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.app_filler_address_input {
+    display: flex;
+    align-items: center;
+    height: 19px;
+    width: 100%;
+    background-color: white;
+
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.insideborder {
+    border: 1px solid var(--lightsmallborder);
+}
+
