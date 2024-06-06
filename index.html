@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>matheus</title>
+    <link rel="icon" type="image/x-icon" href="./assets/doground.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/vars.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header class="centered-hor">
+        <nav class="navbar border fullsize">
+            <div>
+                <div class="button border">
+                    <span>
+                        Matheus Hideki China
+                    </span>
+                </div>
+            </div>
+            <div class="navbar__right">
+                <div class="hamburger button border" style="width: 50px;">
+                    <img src="./assets/w98.png">
+                </div>
+
+                <div class="navbar__links">
+                    <a href="#intro"><div class="button__links border"><span>Home</span></div></a>
+                    <a href="#about"><div class="button__links border"><span>About</span></div></a>
+                    <a><div class="button__links border"><span>Projects</span></div></a>
+                    <a><div class="button__links border"><span>Contact</span></div></a>
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navbarlinks = document.querySelector('.navbar__links');
+            const navbarright = document.querySelector('.navbar__right');
+
+            hamburger.addEventListener('click', () => {    
+                hamburger.classList.toggle("active");
+                navbarlinks.classList.toggle('active');
+                navbarright.classList.toggle('active');
+            })
+
+            document.querySelectorAll(".button__links").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navbarlinks.classList.toggle('active');
+                navbarright.classList.toggle('active');
+            }))
+        </script>
+    </header>
+
+    <section class="centered-hor intro" id="intro">
+        <div class="introimage">
+            <img src="./assets/welcome.gif" style=>
+        </div>
+
+
+        <div class="page border">
+            <div class="outline">
+                <div class="app">
+                    Intro.txt - Notepad
+                </div>
+                <div class="app_filler">
+                    <span>File</span>
+                    <span>Edit</span>
+                    <span>Search</span>
+                    <span>Help</span>
+                </div>
+                <div class="app_content">
+                    <p>Hello, my name is Matheus Hideki China, I'm a Front-end developer from São Paulo, Brazil.
+                        <br> <br>
+                        Currently taking the fifth semester of Análise e Desenvolvimento de Sistemas in Centro Universitário ENIAC.
+                        <br><br>
+                        For more information or any enquiries, all my contact information will be available at the <a href="" style="text-decoration: underline;">Contact page</a>
+                        👍</p>
+
+                    <div class="app_content_links">
+                        <a href="https://github.com/matheusss14/" target="_blank">
+                            <img src="./assets/github2.svg" alt="Github profile">
+                        </a>
+                        <a href="https://www.linkedin.com/in/matheus-hideki-china-80535a277/" target="_blank">
+                            <img src="./assets/linkedin2.png" alt="LinkedIn profile">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="centered-hor about" id="about">
+        <div class="border page" style="width: 1200px; height: 00px;">
+            <div class="outline">
+                <div class="app">
+                    About - Internet Explorer
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                    <div class="insideborder">
+                        <div class="app_filler_address">
+                            <span>Address</span>
+                            <div class="app_filler_address_input">
+                                <img src="./assets/behance.svg" style="width: 12px; margin-left: 5px;">
+                                <span>about:blank</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="browser">
+                    <div class="wiki-header">
+                        <div class="wiki-header-content">
+                            <div class="wiki-header-left">
+                                <div class="wiki-ham" style="cursor: pointer;">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                </div>
+                                <h1>WIKIPÉDI</h1>
+                                <h1>A</h1>
+                            </div>
+                            <div class="wiki-search">
+                                <span class="material-symbols-outlined">
+                                    search
+                                    </span>
+                                <input class="wiki-search-input" placeholder="Search Wikipedia">
+
+                                </input>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wiki-main">
+                        <div class="wiki-main-content">
+                            <div class="wiki-intro">
+                                <h1>Matheus Hideki China</h1>
+                                <span>Front-end dev</span>
+                            </div>
+                            <div class="wiki-intro-divider">
+                                <div class="align-center">
+                                    <div class="align-center spacing">
+                                        <span class="material-symbols-outlined iconsSmall">
+                                            translate
+                                        </span>
+                                        <span class="wiki-intro-diviser-helper smallerspacing">Language</span>
+                                    </div>
+                                </div>
+                                <div class="align-center">
+                                    <div class="align-center spacing" id="download">
+                                        <span class="material-symbols-outlined smallerspacing iconsSmall">
+                                            download
+                                        </span>
+                                        <span class="wiki-intro-diviser-helper">Download</span>
+                                    </div>
+                                    <div class="align-center spacing">
+                                        <span class="material-symbols-outlined smallerspacing iconsSmall">
+                                            star
+                                        </span>
+                                        <span class="wiki-intro-diviser-helper spacing">Watch</span>
+                                    </div>
+                                    <div class="align-center spacing">
+                                        <span class="material-symbols-outlined smallerspacing iconsSmall">
+                                            edit
+                                        </span>
+                                        <span class="wiki-intro-diviser-helper">Edit</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wiki-short-intro">
+                                <p>
+                                    <span style="font-weight: 600;">Matheus Hideki China</span> <span> is a 19 year old brazilian front-end developer.</span>
+                                </p>
+                            </div>
+                            <div class="wiki-info">
+                                <div class="wiki-card">
+                                    <div class="wiki-card-main wiki-border"><span>Matheus Hideki China</span></div>
+                                    <div style="display: flex; justify-content: center; border: 1px solid #eaecf0;"><img src="./assets/tttttt.png"></div>
+                                    <div class="wiki-card-main wiki-border"><span>General information</span></div>
+                                    <div class="wiki-card-info-tab wiki-border">
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Birth name</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>Matheus Hideki China</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Location</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>Guarulhos, São Paulo, Brazil</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Occupation</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>Front-end developer</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Languages</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>Portuguese (native)</span> <br>
+                                                <span>English (fluent)</span> <br>
+                                            </div>
+                                        </div>
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Programming Languages</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>HTML + CSS</span> <br>
+                                                <span>JS</span> <br>
+                                                <span>(learning) React</span> <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wiki-text">
+                                    <button type="button" class="collapsible active">
+                                        <span class="material-symbols-outlined" id="updown">
+                                        keyboard_arrow_up
+                                        </span>
+                                        Biography
+                                    </button>
+                                    <div class="wiki-text-about" style="display: block;">
+                                        <h1>Early life</h1>
+                                        <p>Matheus grew up in Guarulhos; São Paulo, Brazil. Having access to technology and internet from a young age, he naturally grew an
+                                            interest on technology, mainly on web development and web design.
+                                        </p>
+
+                                        <h1 style="margin-top: 40px;">Education</h1>
+                                        <p>Matheus attended E.E Tomie Ohtake High School in Guarulhos, Brazil, graduating in 2021. In 2022, he started a degree 
+                                            in Análise e Desenvolvimento de Sistemas in Centro Universitário ENIAC. 
+                                        </p>
+
+                                        
+                                        <h1 style="margin-top: 40px;">External courses</h1>
+                                        <p>His first ever experience with programming came in 2016, when he took SAGA'S free trial course on Game Development. 
+                                            Then in 2023, he took HarvardX's CS50, the Introduction to Computer Science course. 
+                                            And later on, he would also complete Georgia Institute of Technology's Introduction to User Experience Design course.
+                                        </p>
+                                    </div>
+
+                                    <script>
+                                        var coll = document.getElementsByClassName("collapsible");
+                                        var i;
+                                        var arrow = document.getElementById("updown")
+                                    
+                                        
+                                        for (i = 0; i < coll.length; i++) {
+                                        coll[i].addEventListener("click", function() {
+                                            this.classList.toggle("active");
+                                            var content = this.nextElementSibling;
+                                            if (content.style.display === "block") {
+                                            content.style.display = "none";
+                                            arrow.innerText="keyboard_arrow_down"
+                                            } else {
+                                            content.style.display = "block";
+                                            arrow.innerText="keyboard_arrow_up"
+                                            }
+
+                                        });
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
