@@ -101,10 +101,10 @@
     </section>
 
     <section class="centered-hor about" id="about">
-        <div class="border page" style="width: 1200px; height: 00px;">
+        <div class="border page" style="width: 1200px; height: auto;">
             <div class="outline">
                 <div class="app">
-                    About - Internet Explorer
+                    About Me - Internet Explorer
                 </div>
                 <div class="app_filler" style="margin: 0;">
                     <div class="insideborder">
@@ -195,7 +195,7 @@
                             <div class="wiki-info">
                                 <div class="wiki-card">
                                     <div class="wiki-card-main wiki-border"><span>Matheus Hideki China</span></div>
-                                    <div style="display: flex; justify-content: center; border: 1px solid #eaecf0;"><img src="./assets/tttttt.png"></div>
+                                    <div style="display: flex; justify-content: center; border: 1px solid #eaecf0;"><img src="./assets/tttttt.png" style="height: 150px;"></div>
                                     <div class="wiki-card-main wiki-border"><span>General information</span></div>
                                     <div class="wiki-card-info-tab wiki-border">
                                         <div class="wiki-card-info wiki-border">
@@ -237,8 +237,9 @@
                                             </div>
                                             <div class="wiki-card-info-subtitle">
                                                 <span>HTML + CSS</span> <br>
-                                                <span>JS</span> <br>
+                                                <span>JavaScript</span> <br>
                                                 <span>(learning) React</span> <br>
+                                                <span>SQL</span> <br>
                                             </div>
                                         </div>
                                     </div>
@@ -248,26 +249,41 @@
                                         <span class="material-symbols-outlined" id="updown">
                                         keyboard_arrow_up
                                         </span>
-                                        Biography
+                                        About me
                                     </button>
                                     <div class="wiki-text-about" style="display: block;">
-                                        <h1>Early life</h1>
-                                        <p>Matheus grew up in Guarulhos; São Paulo, Brazil. Having access to technology and internet from a young age, he naturally grew an
+                                        <h1>Bio</h1>
+                                        <p>I'm a 19 year old Front-end developer and student based in São Paulo, Brazil.
+                                             Having access to technology and internet from a young age, I naturally grew an
                                             interest on technology, mainly on web development and web design.
                                         </p>
+                                        <br>
+                                        <h1>Now</h1>
+                                        <p>Currently learning React.js, alongside with improving my HTML and CSS skills with 
+                                            <a href="#about" style="text-decoration: underline;">personal projects.</a>
+                                            Also taking courses in graphic design.
+                                        </p>  
+                                    </div>
 
-                                        <h1 style="margin-top: 40px;">Education</h1>
-                                        <p>Matheus attended E.E Tomie Ohtake High School in Guarulhos, Brazil, graduating in 2021. In 2022, he started a degree 
+                                    <button type="button" class="collapsible2 active">
+                                        <span class="material-symbols-outlined" id="arrow">
+                                        keyboard_arrow_up
+                                        </span>
+                                        Dev
+                                    </button>
+                                    <div class="wiki-text-about" style="display: block;">
+                                        <h1>Education</h1>
+                                        <p>Attended E.E Tomie Ohtake High School in Guarulhos, Brazil, graduating in 2021. In 2022, I started a degree 
                                             in Análise e Desenvolvimento de Sistemas in Centro Universitário ENIAC. 
                                         </p>
-
-                                        
-                                        <h1 style="margin-top: 40px;">External courses</h1>
-                                        <p>His first ever experience with programming came in 2016, when he took SAGA'S free trial course on Game Development. 
-                                            Then in 2023, he took HarvardX's CS50, the Introduction to Computer Science course. 
-                                            And later on, he would also complete Georgia Institute of Technology's Introduction to User Experience Design course.
+                                        <br>
+                                        <h1>External courses</h1>
+                                        <p>My first ever experience with programming came in 2016, when I took SAGA'S free trial course on Game Development. 
+                                            Then in 2023, I took HarvardX's CS50, the Introduction to Computer Science course. 
+                                            And later on, I would also complete Georgia Institute of Technology's Introduction to User Experience Design course.
                                         </p>
                                     </div>
+                                    
 
                                     <script>
                                         var coll = document.getElementsByClassName("collapsible");
@@ -290,6 +306,27 @@
                                         });
                                         }
                                     </script>
+                                    <script>
+                                        var coll = document.getElementsByClassName("collapsible2");
+                                        var i;
+                                        var arrow2 = document.getElementById("arrow")
+                                    
+                                        
+                                        for (i = 0; i < coll.length; i++) {
+                                        coll[i].addEventListener("click", function() {
+                                            this.classList.toggle("active");
+                                            var content = this.nextElementSibling;
+                                            if (content.style.display === "block") {
+                                            content.style.display = "none";
+                                            arrow2.innerText="keyboard_arrow_down"
+                                            } else {
+                                            content.style.display = "block";
+                                            arrow2.innerText="keyboard_arrow_up"
+                                            }
+
+                                        });
+                                        }
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -298,5 +335,73 @@
             </div>
         </div>
     </section>
+
+    <section class="centered-hor about" id="projects">
+        <div class="border page" style="width: 1200px; height: auto;">
+            <div class="outline">
+                <div class="app">
+                    Projects (C:)
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                    <div class="insideborder">
+                        <div class="app_filler_address">
+                            <span>Address</span>
+                            <div class="app_filler_address_input">
+                                <img src="./assets/behance.svg" style="width: 12px; margin-left: 5px;">
+                                <span>C:\</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="browser projects">
+                    <div class="projects-intro">
+                        <div class="projects-intro-text">
+                            <h1>(C:)</h1>
+                        </div>
+                            <div class="projects-intro-borders">
+                                <div class="pborder red"></div>
+                                <div class="pborder yellow"></div>
+                                <div class="pborder green"></div>
+                                <div class="pborder blue"></div>
+                            </div>
+                        <div class="projects-intro-text" style="margin-top: 0;">
+                            <span>Select an item to view its description.</span>
+                        </div>
+                    </div>
+                    <div class="project-list">
+                        <div class="project-entry">
+                            <img src="./assets/this.png">
+                            <span>Old portfolio</span> 
+                        </div>
+                        <div class="project-entry">
+                            <img src="./assets/vidrossanches.png">
+                            <span>Vidros Sanches website</span> 
+                        </div>
+                        <div class="project-entry">
+                            <img src="./assets/smartcats.png">
+                            <span>Smart Cat's website</span> 
+                        </div>
+                        <div class="project-entry">
+                            <img src="./assets/behance.svg">
+                            <span>Title</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    asdasdasd
 </body>
 </html>

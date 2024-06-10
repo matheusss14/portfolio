@@ -269,6 +269,8 @@ a {
     border: 1px solid var(--lightsmallborder);
 }
 
+/*start of wiki*/
+
 .browser {
     padding: 0px 0px 10px 0px;
     background-color: #fff;
@@ -276,6 +278,7 @@ a {
     text-align: justify;
     color: black;
     line-height: 1.4;
+
 }
 
 .wiki-header {
@@ -369,7 +372,8 @@ a {
 }
 
 .wiki-main p {
-    text-align: start;
+    text-align: justify;
+    font-size: 0.9rem;
 }
 
 .wiki-main {
@@ -474,6 +478,8 @@ a {
     background-color: #f8f9fa;
     border: 1px solid #eaecf0;
     border-radius: 3px 3px 0 0;
+
+    margin-bottom: 60px;
 }
 
 .wiki-text {
@@ -524,6 +530,7 @@ a {
 
     .wiki-card {
         width: 100%;
+        margin-bottom: 0;
     }
 
     .wiki-text {
@@ -532,6 +539,23 @@ a {
 }
 
 .collapsible {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #202122;
+    cursor: pointer;
+    width: 95%;
+    text-align: left;
+    font-size: 1.4rem;
+    font-family: "Times New Roman", sans-serif;;
+
+    border: none;
+    border-bottom: 1px solid #c8ccd1;
+
+    padding: 10px 5px;
+  }
+
+.collapsible2 {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -558,6 +582,79 @@ a {
 
 .wiki-text-about h1 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
     font-weight: 600;
+}
+
+/* end of wiki*/
+
+.projects {
+    display: flex;
+}
+.projects-intro {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.projects-intro h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.projects-intro-text {
+    display: flex;
+    margin-top: 40%;
+    width: 50%;
+    justify-content: center;
+}
+
+.project-list {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.project-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0 5px 0;
+    margin: 20px;
+
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.project-entry img {
+    aspect-ratio: 16 / 9;
+    height: 200px;
+}
+
+.projects-intro-borders {
+    display: flex;
+}
+.pborder {
+    width: 70px;
+    height: 3px;
+}
+.red {
+    background-color: #ea6c50;
+}
+.yellow {
+    background-color: #fbda55;
+}
+.green {
+    background-color: #99dd77;
+}
+.blue {
+    background-color: #55bbff;
+}
+
+@media (max-width: 768px) {
+    #projects {
+        display: none;
+    }
 }
