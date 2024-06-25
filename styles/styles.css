@@ -14,6 +14,8 @@ body {
     background-image: url('../assets/bg.gif');
     font-family: "DotGothic16", sans-serif;
     font-weight: 500;
+
+    overflow: hidden;
 }
 
 .centered-hor {
@@ -86,6 +88,10 @@ a {
         width: 200px;
     }
 
+    .navbar {
+        position: fixed;
+    }
+
     .navbar__right {
         display: flex;
         flex-direction: column;
@@ -121,14 +127,10 @@ a {
     }
 }
 
-@media (max-width: 400px) {
-    .app_content_links a {
-        width: 30px;
-    }
-}
+
 
 .intro {
-    height: 93vh;
+    height: 91vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,10 +138,9 @@ a {
 
 .page {
     width: 400px;
-    height: 400px;
-
-    margin: 30px;
+    
 }
+
 
 .outline {
     border: 1px solid #cccccc;
@@ -148,15 +149,18 @@ a {
 .app {
     background-color: var(--backgroundpage);
 
-    padding: 8px;
+    padding: 2px 2px 2px 8px;;
     color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .app_content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 330px;
     border: 1px solid black;
     background-color: white;
     padding: 4px 10px;
@@ -184,6 +188,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-top: 20px;
 }
 
 .app_content_links a {
@@ -200,23 +206,15 @@ a {
     width: 40px;
 }
 
-@media (max-width: 768px) {
-    .intro {
-        flex-direction: column;
-    }
-
-    .introimage {
-        height: 200px;
-    }
-
-    .introimage img {
-        height: auto;
-    }
-
-    .page {
-        width: auto;
-    }
+.closebtn {
+    width: 22px;
+    height: 20px;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
 }
+
+
 
 .app_filler_tabs {
     display: flex;
@@ -272,13 +270,13 @@ a {
 /*start of wiki*/
 
 .browser {
-    padding: 0px 0px 10px 0px;
     background-color: #fff;
     border: 1px solid black;
     text-align: justify;
     color: black;
     line-height: 1.4;
-
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .wiki-header {
@@ -350,30 +348,10 @@ a {
     padding-right: 70px;
 }
 
-@media (max-width: 768px) {
-    .wiki-header-content {
-        width: 90%;
-    
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .wiki-search {
-        background-color: #eaecf0;
-
-        padding: 5px;
-        border: 0px solid;
-    }
-
-    .wiki-search-input {
-        display: none;
-    }
-}
 
 .wiki-main p {
     text-align: justify;
-    font-size: 0.9rem;
+    font-size: 0.85rem;;
 }
 
 .wiki-main {
@@ -387,6 +365,7 @@ a {
 
 .wiki-main-content {
     width: 60%;
+    height: 700px;
 
     font-family: "Times New Roman", sans-serif;
 }
@@ -440,23 +419,6 @@ a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 768px) {
-    .wiki-intro-divider {
-        height: 35px;
-    }
-
-    .wiki-main-content {
-        width: 90%;
-    }
-
-    .wiki-intro-diviser-helper {
-        display: none;
-    }
-
-    #download {
-        display: none;
-    }
-}
 
 .wiki-border {
     border: 1px solid #eaecf0;
@@ -484,6 +446,7 @@ a {
 
 .wiki-text {
     width: 65%;
+    line-height: 1.3;
 }
 
 .wiki-card-main {
@@ -498,6 +461,7 @@ a {
 .wiki-card-info-tab {
     display: flex;
     flex-direction: column;
+    font-size: 0.85rem;
 }
 
 .wiki-card-info {
@@ -595,7 +559,10 @@ a {
     display: flex;
     flex-direction: column;
 
-    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    background-image: url("../assets/fileexplorerbg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 50% 100%;
 }
 
 .projects-intro h1 {
@@ -605,7 +572,10 @@ a {
 
 .projects-intro-text {
     display: flex;
-    margin-top: 40%;
+    flex-direction: column;
+    margin-top: 25%;
+    margin-left: 10%;
+    margin-bottom: 8%;
     width: 50%;
     justify-content: center;
 }
@@ -626,10 +596,11 @@ a {
 
     border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+
+    cursor: pointer;
 }
 
 .project-entry img {
-    aspect-ratio: 16 / 9;
     height: 200px;
 }
 
@@ -653,8 +624,212 @@ a {
     background-color: #55bbff;
 }
 
+
+
+.hidden {
+    display: none;
+}
+
+.activebtn {
+    background-color: #afafaf;
+    border-bottom: 1.5px solid var(--border-light);
+    border-left: 1.5px solid var(--border-dark);
+    border-top: 1.5px solid var(--border-dark);
+    border-right: 1.5px solid var(--border-light);
+}
+
+#dragNote {
+    position: absolute;
+    z-index: 1;
+    width: 400px;
+}
+
+#aboutPage {
+    position: absolute;
+    z-index: 1;
+    width: 1200px;
+}
+
+#projPage {
+    position: absolute;
+    z-index: 1;
+    width: 1200px;
+}
+
+.higherIndex {
+    z-index: 999;
+}
+
+.startingPos {
+    top: 87px;
+    left: 359px;
+}
+
+.paint-main {
+    display: flex;
+}
+
+.paint-left {
+    width: 5%;
+    height: 100%;
+    border: 1px solid var(--lightsmallborder);
+
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.paint-filler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+}
+
+.paint-space {
+    width: 95%;
+    height: 100%;
+}
+
+.paint-footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.paint-footer-filler {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
 @media (max-width: 768px) {
-    #projects {
+
+    body {
+        overflow: auto;
+    }
+    #dragNote {
+        position: inherit;
+        width: 85vw;
+    }
+    
+    #aboutPage {
+        top: auto;
+        left: auto;
+    }
+
+    #projPage {
+        top: auto;
+        left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-intro {
         display: none;
+    }
+
+    .project-list {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .project-entry img {
+        aspect-ratio: 16 / 9;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+    }
+
+    .introimage {
+        height: 200px;
+    }
+
+    .introimage img {
+        height: auto;
+    }
+
+    .page {
+        width: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .app_content_links a {
+        width: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .page {
+        margin: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .wiki-intro-divider {
+        height: 35px;
+    }
+
+    .wiki-main-content {
+        width: 90%;
+
+        height: auto;
+    }
+
+    .wiki-intro-diviser-helper {
+        display: none;
+    }
+
+    #download {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #aboutPage {
+        width: 99vw;
+    }
+
+    #projPage {
+        width: 99vw;
+    }
+
+    .outline {
+        width: 99vw;
+    }
+
+    .wiki-header-content {
+        width: 90%;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .wiki-search {
+        background-color: #eaecf0;
+
+        padding: 5px;
+        border: 0px solid;
+    }
+
+    .wiki-search-input {
+        display: none;
+    }
+
+    .page {
+        margin: 0;
+        margin-top: 2px;
+        z-index: 1;
+    }
+
+    .browser {
+        height: 83.5vh;
     }
 }

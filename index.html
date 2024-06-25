@@ -18,15 +18,17 @@
     <link rel="stylesheet" href="./styles/vars.css">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
-<body>
-    <header class="centered-hor">
+<body style="position: absolute;">
+    <header class="centered-hor" style="height: 60px;">
         <nav class="navbar border fullsize">
             <div>
-                <div class="button border">
-                    <span>
-                        Matheus Hideki China
-                    </span>
-                </div>
+                <a>
+                    <div class="button border" onclick="nameClick()">
+                        <span>
+                            Matheus Hideki China
+                        </span>
+                    </div>
+                </a>
             </div>
             <div class="navbar__right">
                 <div class="hamburger button border" style="width: 50px;">
@@ -34,9 +36,9 @@
                 </div>
 
                 <div class="navbar__links">
-                    <a href="#intro"><div class="button__links border"><span>Home</span></div></a>
-                    <a href="#about"><div class="button__links border"><span>About</span></div></a>
-                    <a><div class="button__links border"><span>Projects</span></div></a>
+                    <a onclick="showHome()"><div class="button__links border" id="homeBt"><span>Home</span></div></a>
+                    <a onclick="showAbout()"><div class="button__links border" id="aboutBt"><span>About</span></div></a>
+                    <a onclick="showProjects()"><div class="button__links border" id="projBt"><span>Projects</span></div></a>
                     <a><div class="button__links border"><span>Contact</span></div></a>
                 </div>
             </div>
@@ -54,23 +56,25 @@
             })
 
             document.querySelectorAll(".button__links").forEach(n => n.addEventListener("click", () => {
+                setTimeout(() => navbarlinks.classList.toggle('active'), 100)
+                setTimeout(() => navbarright.classList.toggle('active'), 100)
                 hamburger.classList.remove("active");
-                navbarlinks.classList.toggle('active');
-                navbarright.classList.toggle('active');
+
             }))
         </script>
     </header>
 
-    <section class="centered-hor intro" id="intro">
+    <section class="centered-hor intro hidden" id="intro">
         <div class="introimage">
             <img src="./assets/welcome.gif" style=>
         </div>
 
 
-        <div class="page border">
-            <div class="outline">
-                <div class="app">
+        <div id="notepad">
+            <div class="page border" id="dragNote" style="top: 229px;left: 131px;">
+                <div class="app" id="dragNoteheader">
                     Intro.txt - Notepad
+                    <span class="border button closebtn" onclick="closeNotepad()">X</span>
                 </div>
                 <div class="app_filler">
                     <span>File</span>
@@ -100,11 +104,12 @@
         </div>
     </section>
 
-    <section class="centered-hor about" id="about">
-        <div class="border page" style="width: 1200px; height: auto;">
+    <section class="centered-hor about hidden" id="about">
+        <div class="border page startingPos" style="width: 1200px; height: auto;"  id="aboutPage">
             <div class="outline">
-                <div class="app">
-                    About Me - Internet Explorer
+                <div class="app" id="aboutPageheader">
+                    <span>About Me - Internet Explorer</span>
+                    <span class="border button closebtn" onclick="hideAbout()">X</span>
                 </div>
                 <div class="app_filler" style="margin: 0;">
                     <div class="insideborder">
@@ -159,7 +164,7 @@
                             </div>
                             <div class="wiki-intro-divider">
                                 <div class="align-center">
-                                    <div class="align-center spacing">
+                                    <div class="align-center spacing" style="cursor: pointer;">
                                         <span class="material-symbols-outlined iconsSmall">
                                             translate
                                         </span>
@@ -167,19 +172,19 @@
                                     </div>
                                 </div>
                                 <div class="align-center">
-                                    <div class="align-center spacing" id="download">
+                                    <div class="align-center spacing" id="download" style="cursor: pointer;">
                                         <span class="material-symbols-outlined smallerspacing iconsSmall">
                                             download
                                         </span>
                                         <span class="wiki-intro-diviser-helper">Download</span>
                                     </div>
-                                    <div class="align-center spacing">
+                                    <div class="align-center spacing" style="cursor: pointer;">
                                         <span class="material-symbols-outlined smallerspacing iconsSmall">
                                             star
                                         </span>
                                         <span class="wiki-intro-diviser-helper spacing">Watch</span>
                                     </div>
-                                    <div class="align-center spacing">
+                                    <div class="align-center spacing" style="cursor: pointer;">
                                         <span class="material-symbols-outlined smallerspacing iconsSmall">
                                             edit
                                         </span>
@@ -336,11 +341,12 @@
         </div>
     </section>
 
-    <section class="centered-hor about" id="projects">
-        <div class="border page" style="width: 1200px; height: auto;">
-            <div class="outline">
-                <div class="app">
+    <section class="centered-hor hidden" id="projects">
+        <div class="border page startingPos" style="width: 1200px; height: auto;" id="projPage">
+            <div class="outline" >
+                <div class="app" id="projPageheader">
                     Projects (C:)
+                    <span class="border button closebtn" onclick="hideProjects()">X</span>
                 </div>
                 <div class="app_filler" style="margin: 0;">
                     <div class="insideborder">
@@ -367,6 +373,7 @@
                 <div class="browser projects">
                     <div class="projects-intro">
                         <div class="projects-intro-text">
+                            <img src="./assets/fileIcon.png" style="mix-blend-mode: darken; aspect-ratio: 1 / 1; width: 60px;">
                             <h1>(C:)</h1>
                         </div>
                             <div class="projects-intro-borders">
@@ -375,14 +382,14 @@
                                 <div class="pborder green"></div>
                                 <div class="pborder blue"></div>
                             </div>
-                        <div class="projects-intro-text" style="margin-top: 0;">
+                        <div class="projects-intro-text" style="margin-top: 8%;">
                             <span>Select an item to view its description.</span>
                         </div>
                     </div>
                     <div class="project-list">
                         <div class="project-entry">
-                            <img src="./assets/this.png">
-                            <span>Old portfolio</span> 
+                            <img src="./assets/whoareya.png">
+                            <span>Who are ya? Counter-Strike</span> 
                         </div>
                         <div class="project-entry">
                             <img src="./assets/vidrossanches.png">
@@ -402,6 +409,62 @@
         </div>
     </section>
 
-    asdasdasd
+    <section class="centered-hor hidden" id="paint1">
+        <div class="border page startingPos" style="width: 1200px; height: auto;" id="proj1">
+            <div class="outline">
+                <div class="app" id="proj1header">
+                    untitled - Paint
+                    <span class="border button closebtn">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        asdasdsad
+                    </div>
+                </div>
+
+                <div class="paint-footer">
+                    <div class="paint-footer-main">
+
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+    <script src="./drag.js"></script>
 </body>
 </html>
