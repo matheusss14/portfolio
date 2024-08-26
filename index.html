@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>matheus</title>
+    <link rel="icon" type="image/x-icon" href="./assets/doground.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/vars.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body style="position: absolute;">
+    <header class="centered-hor" style="height: 60px;">
+        <nav class="navbar border fullsize">
+            <div>
+                <a>
+                    <div class="button border" onclick="nameClick()">
+                        <span>
+                            Matheus Hideki China
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar__right">
+                <div class="hamburger button border" style="width: 50px;">
+                    <img src="./assets/w98.png">
+                </div>
+
+                <div class="navbar__links">
+                    <a onclick="showHome()"><div class="button__links border" id="homeBt"><span>Home</span></div></a>
+                    <a onclick="showAbout()"><div class="button__links border" id="aboutBt"><span>About</span></div></a>
+                    <a onclick="showProjects()"><div class="button__links border" id="projBt"><span>Projects</span></div></a>
+                    <a><div class="button__links border"><span>Contact</span></div></a>
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navbarlinks = document.querySelector('.navbar__links');
+            const navbarright = document.querySelector('.navbar__right');
+
+            hamburger.addEventListener('click', () => {    
+                hamburger.classList.toggle("active");
+                navbarlinks.classList.toggle('active');
+                navbarright.classList.toggle('active');
+            })
+
+            document.querySelectorAll(".button__links").forEach(n => n.addEventListener("click", () => {
+                setTimeout(() => navbarlinks.classList.toggle('active'), 100)
+                setTimeout(() => navbarright.classList.toggle('active'), 100)
+                hamburger.classList.remove("active");
+
+            }))
+        </script>
+    </header>
+
+    <section class="centered-hor intro" id="intro">
+        <div class="introimage">
+            <img src="./assets/welcome.gif" style=>
+        </div>
+
+
+        <div id="notepad">
+            <div class="page border" id="dragNote" style="    top: 297px;
+    left: 469px;">
+                <div class="app" id="dragNoteheader">
+                    Intro.txt - Notepad
+                    <span class="border button closebtn" onclick="closeNotepad()">X</span>
+                </div>
+                <div class="app_filler">
+                    <span>File</span>
+                    <span>Edit</span>
+                    <span>Search</span>
+                    <span>Help</span>
+                </div>
+                <div class="app_content">
+                    <p>Hello, my name is Matheus Hideki China, I'm a Front-end developer from São Paulo, Brazil.
+                        <br> <br>
+                        Currently taking the fifth semester of Análise e Desenvolvimento de Sistemas in Centro Universitário ENIAC.
+                        <br><br>
+                        For more information or any enquiries, all my contact information will be available at the Contact page
+                        👍</p>
+
+                    <div class="app_content_links">
+                        <a href="https://github.com/matheusss14/" target="_blank">
+                            <img src="./assets/github2.svg" alt="Github profile">
+                        </a>
+                        <a href="https://www.linkedin.com/in/matheus-hideki-china-80535a277/" target="_blank">
+                            <img src="./assets/linkedin2.png" alt="LinkedIn profile">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="centered-hor about hidden" id="about">
+        <div class="border page startingPos" style="height: auto;"  id="aboutPage">
+            <div class="outline">
+                <div class="app" id="aboutPageheader">
+                    <span>About Me - Internet Explorer</span>
+                    <span class="border button closebtn" onclick="hideAbout()">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                    <div class="insideborder">
+                        <div class="app_filler_address">
+                            <span>Address</span>
+                            <div class="app_filler_address_input">
+                                <img src="./assets/behance.svg" style="width: 12px; margin-left: 5px;">
+                                <span>about:blank</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="browser">
+                    <div class="wiki-header">
+                        <div class="wiki-header-content">
+                            <div class="wiki-header-left">
+                                <div class="wiki-ham" style="cursor: pointer;">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                </div>
+                                <h1>MATHEUSPEDI</h1>
+                                <h1>A</h1>
+                            </div>
+                            <div class="wiki-search">
+                                <span class="material-symbols-outlined" translate="no">
+                                    search
+                                    </span>
+                                <input class="wiki-search-input" placeholder="Search Wikipedia">
+
+                                </input>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wiki-main">
+                        <div class="wiki-main-content">
+                            <div class="wiki-intro">
+                                <h1>Matheus Hideki China</h1>
+                                <span>Front-end dev</span>
+                            </div>
+                            <div class="wiki-intro-divider">
+                                <div class="align-center">
+                                    <div class="align-center spacing" style="cursor: pointer;">
+                                        <span class="material-symbols-outlined iconsSmall" translate="no">
+                                            translate
+                                        </span>
+                                        <span class="wiki-intro-diviser-helper smallerspacing">Language</span>
+                                    </div>
+                                </div>
+                                <div class="align-center">
+                                    <div class="align-center spacing" id="download" style="cursor: pointer;">
+                                        <span class="material-symbols-outlined smallerspacing iconsSmall" translate="no">
+                                            download
+                                        </span>
+                                        <span class="wiki-intro-diviser-helper">Download</span>
+                                    </div>
+                                    <div class="align-center spacing" style="cursor: pointer;">
+                                        <span class="material-symbols-outlined smallerspacing iconsSmall" translate="no">
+                                            star
+                                        </span>
+                                        <span class="wiki-intro-diviser-helper spacing">Watch</span>
+                                    </div>
+                                    <div class="align-center spacing" style="cursor: pointer;" translate="no">
+                                        <span class="material-symbols-outlined smallerspacing iconsSmall">
+                                            edit
+                                        </span>
+                                        <span class="wiki-intro-diviser-helper">Edit</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wiki-short-intro">
+                                <p>
+                                    <span style="font-weight: 600;">Matheus Hideki China</span> <span> is a 19 year old brazilian front-end developer.</span>
+                                </p>
+                            </div>
+                            <div class="wiki-info">
+                                <div class="wiki-card">
+                                    <div class="wiki-card-main wiki-border"><span>Matheus Hideki China</span></div>
+                                    <div style="display: flex; justify-content: center; border: 1px solid #eaecf0;"><img src="./assets/tttttt.png" style="height: 150px;"></div>
+                                    <div class="wiki-card-main wiki-border"><span>General information</span></div>
+                                    <div class="wiki-card-info-tab wiki-border">
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Birth name</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>Matheus Hideki China</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Location</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>Guarulhos, São Paulo, Brazil</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Occupation</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>Front-end developer</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Languages</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>Portuguese (native)</span> <br>
+                                                <span>English (fluent)</span> <br>
+                                            </div>
+                                        </div>
+                                        <div class="wiki-card-info wiki-border">
+                                            <div class="wiki-card-info-title">
+                                                <span>Technologies</span>
+                                            </div>
+                                            <div class="wiki-card-info-subtitle">
+                                                <span>HTML + CSS</span> <br>
+                                                <span>JavaScript</span> <br>
+                                                <span>Django</span> <br>
+                                                <span>:]</span> <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wiki-text">
+                                    <button type="button" class="collapsible active">
+                                        <span class="material-symbols-outlined" id="updown" translate="no">
+                                        keyboard_arrow_up
+                                        </span>
+                                        About me
+                                    </button>
+                                    <div class="wiki-text-about" style="display: block;">
+                                        <h1>Bio</h1>
+                                        <p>I'm a 19 year old Front-end developer and student based in São Paulo, Brazil.
+                                             Having access to technology and internet from a young age, I naturally grew an
+                                            interest on technology, mainly on web development and web design.
+                                        </p>
+                                    </div>
+
+                                    <button type="button" class="collapsible2 active">
+                                        <span class="material-symbols-outlined" id="arrow" translate="no">
+                                        keyboard_arrow_up
+                                        </span>
+                                        Dev
+                                    </button>
+                                    <div class="wiki-text-about" style="display: block;">
+                                        <h1>Education</h1>
+                                        <p>Currently graduating in Análise e Desenvolvimento de Sistemas in Centro Universitário ENIAC, in Guarulhos, SP, Brazil. 
+                                        </p>
+                                        <br>
+                                        <h1>External courses</h1>
+                                        <p>
+                                            Completed 
+                                            <a href="https://certificates.cs50.io/45e6479f-6300-4a64-a417-970ac3a85162.pdf?size=letter" target="_blank" style="text-decoration: underline;">
+                                            Harvard's CS50 - Harvard's Introduction to Computer Science
+                                            </a>. 
+                                            Currently taking one of its follow up courses,
+                                            CS50W - CS50 Web Development with Python and JavaScript. Also completed Georgia Institute of Technology's Introduction to 
+                                            User Experience Design course.
+                                        </p>
+                                    </div>
+                                    
+
+                                    <script>
+                                        var coll = document.getElementsByClassName("collapsible");
+                                        var i;
+                                        var arrow = document.getElementById("updown")
+                                    
+                                        
+                                        for (i = 0; i < coll.length; i++) {
+                                        coll[i].addEventListener("click", function() {
+                                            this.classList.toggle("active");
+                                            var content = this.nextElementSibling;
+                                            if (content.style.display === "block") {
+                                            content.style.display = "none";
+                                            arrow.innerText="keyboard_arrow_down"
+                                            } else {
+                                            content.style.display = "block";
+                                            arrow.innerText="keyboard_arrow_up"
+                                            }
+
+                                        });
+                                        }
+                                    </script>
+                                    <script>
+                                        var coll = document.getElementsByClassName("collapsible2");
+                                        var i;
+                                        var arrow2 = document.getElementById("arrow")
+                                    
+                                        
+                                        for (i = 0; i < coll.length; i++) {
+                                        coll[i].addEventListener("click", function() {
+                                            this.classList.toggle("active");
+                                            var content = this.nextElementSibling;
+                                            if (content.style.display === "block") {
+                                            content.style.display = "none";
+                                            arrow2.innerText="keyboard_arrow_down"
+                                            } else {
+                                            content.style.display = "block";
+                                            arrow2.innerText="keyboard_arrow_up"
+                                            }
+
+                                        });
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="centered-hor hidden" id="projects">
+        <div class="border page startingPos" style="height: auto;" id="projPage">
+            <div class="outline" >
+                <div class="app" id="projPageheader">
+                    Projects (C:)
+                    <span class="border button closebtn" onclick="hideProjects()">X</span>
+                </div>
+                
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                    <div class="insideborder">
+                        <div class="app_filler_tabs" style="height: auto;">
+                            <div class="app_filler_icons border" onclick="showFolders()" style="cursor: pointer;" id="backBt">
+                                <span class="material-symbols-outlined" style="font-weight: 900;" translate="no">
+                                    arrow_back
+                                    </span>
+                                <span>Back</span>
+                            </div>
+                            <div class="app_filler_icons border" onclick="goLast()" style="cursor: pointer;" id="nextBt">
+                                <span class="material-symbols-outlined" style="font-weight: 900;" translate="no">
+                                    arrow_forward
+                                    </span>
+                                <span>Forward</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="insideborder">
+                        <div class="app_filler_address">
+                            <span>Address</span>
+                            <div class="app_filler_address_input">
+                                <img src="./assets/behance.svg" style="width: 12px; margin-left: 5px;">
+                                <span style="padding: 0 0px 0 5px;">C:\</span>
+                                <span id="projUrl"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="browser projects">
+                    <div class="projects-intro">
+                        <div class="projects-intro-text">
+                            <img src="./assets/fileIcon.png" style="mix-blend-mode: darken; aspect-ratio: 1 / 1; width: 60px;">
+                            <h1>(C:)</h1>
+                        </div>
+                            <div class="projects-intro-borders">
+                                <div class="pborder red"></div>
+                                <div class="pborder yellow"></div>
+                                <div class="pborder green"></div>
+                                <div class="pborder blue"></div>
+                            </div>
+                        <div class="projects-intro-text" style="margin-top: 8%;">
+                            <span>Select an item to view its description.</span>
+                        </div>
+                    </div>
+                    <div class="project-list" id="folders">
+                        <div class="project-entry" onclick="showFront()">
+                            <img src="./assets/folder.png">
+                            <span>Front-end projects</span> 
+                        </div>
+                        <div class="project-entry" onclick="showCS50()">
+                            <img src="./assets/folder.png">
+                            <span>CS50W Problems</span> 
+                        </div>
+                    </div>
+
+                    <div class="project-list hidden" id="front">
+                        <div class="project-entry" onclick="showProj(document.getElementById('proj1'))">
+                            <img src="./assets/whoareya.png">
+                            <span>Who-are-ya?-Counter-Strike.file</span> 
+                        </div>
+                        <div class="project-entry">
+                            <img src="./assets/weather.png" onclick="showProj(document.getElementById('proj2'))">
+                            <span>WeatherApp.file</span> 
+                        </div>
+                    </div>
+
+                    <div class="project-list hidden" id="CS50">
+                        <div class="project-entry" onclick="showProj(document.getElementById('cs50w2'))">
+                            <img src="./assets/Screenshot_14.png">
+                            <span>
+                                CS50W Project 2 - Commerce
+                            </span> 
+                        </div>
+                        <div class="project-entry" onclick="showProj(document.getElementById('cs50w1'))">
+                            <img src="./assets/weather.png">
+                            <span>CS50W Project 1 - Wiki</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="centered-hor" id="paint1">
+        <div class="border page hidden" style="height: auto;" id="proj1">
+            <div class="outline">
+                <div class="app" id="proj1header">
+                    untitled - Paint
+                    <span class="border button closebtn" onclick="closeProj(document.getElementById('proj1'))">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        <div class="proj-header">
+                            <img src="./assets/whoareya.png" class="proj-img">
+                            <div class="proj-info">
+                                <h1>Who are ya? CS2</h1>
+                                <div class="proj-links">
+                                    <a href="https://github.com/matheusss14/csguessr" target="_blank">
+                                        <img src="./assets/github2.svg" class="link-img">
+                                    </a>
+                                    <a href="https://matheusss14.github.io/csguessr" target="_blank">
+                                        <img src="./assets/GoTo2.svg" class="link-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-text">
+                            <p>A web-based game inspired on playfootball.games's famous Who Are Ya? (https://playfootball.games/who-are-ya), which gained popularity online in the recent years, but instead of it being football themed, it's based on Counter-Strike! The game works the same way the original game works, using the same concept. You get a random player from the main teams and leagues from all around the world, and the user has to guess who the randomized selected player is. After every guess, the game will present 'feedback' to the user, showing if he got the player correct in a series of different criteria (Region, role, age, rating, major appearances, team, continent, etc). Based on the feedback given to the user, it is now in the user's hands to fix what was wrong in his last guess until he gets all the criteria correct and correctly guesses the player.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paint-footer border" style="padding: 2px; margin-top: 1px;">
+                    <div class="paint-footer-main border" style="background-color: #cccccc;">
+                        <div style="background-color: black; height: 20px; width: 20px; position: relative; left: 10%; top: 10%;" class="border"></div>
+                        <div style="background-color: white; height: 20px; width: 20px; position: relative; left: 35%; top: -20%;" class="border"></div>
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: black;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: white;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: grey;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: silver;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: crimson"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: red;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: goldenrod;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: gold;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: green;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: greenyellow;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:cadetblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: cyan;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:darkblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: blue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:blueviolet;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: magenta;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="centered-hor" id="paint1">
+        <div class="border page hidden" style="height: auto;" id="proj2">
+            <div class="outline">
+                <div class="app" id="proj2header">
+                    untitled - Paint
+                    <span class="border button closebtn" onclick="closeProj(document.getElementById('proj2'))">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        <div class="proj-header">
+                            <img src="./assets/weather.png" class="proj-img">
+                            <div class="proj-info">
+                                <h1>WeatherApp</h1>
+                                <div class="proj-links">
+                                    <a href="https://github.com/matheusss14/weather" target="_blank">
+                                        <img src="./assets/github2.svg" class="link-img">
+                                    </a>
+                                    <a href="https://matheusss14.github.io/weather/" target="_blank">
+                                        <img src="./assets/GoTo2.svg" class="link-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-text">
+                            <p>Simple WeatherApp to practice consuming an API. <br>
+                                Type an input into a form to search a city, and it will display a card with its weather information.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paint-footer border" style="padding: 2px; margin-top: 1px;">
+                    <div class="paint-footer-main border" style="background-color: #cccccc;">
+                        <div style="background-color: black; height: 20px; width: 20px; position: relative; left: 10%; top: 10%;" class="border"></div>
+                        <div style="background-color: white; height: 20px; width: 20px; position: relative; left: 35%; top: -20%;" class="border"></div>
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: black;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: white;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: grey;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: silver;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: crimson"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: red;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: goldenrod;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: gold;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: green;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: greenyellow;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:cadetblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: cyan;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:darkblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: blue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:blueviolet;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: magenta;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="centered-hor" id="paint1">
+        <div class="border page hidden" style="height: auto;" id="cs50w2">
+            <div class="outline">
+                <div class="app" id="cs50w2header">
+                    untitled - Paint
+                    <span class="border button closebtn" onclick="closeProj(document.getElementById('cs50w2'))">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        <div class="proj-header">
+                            <img src="./assets/Screenshot_14.png" class="proj-img">
+                            <div class="proj-info">
+                                <h1>Project 2 - Commerce</h1>
+                                <div class="proj-links">
+                                    <a href="https://github.com/me50/matheusss14/tree/5709f6c52438d901931c623f1575745ac7096911" target="_blank">
+                                        <img src="./assets/github2.svg" class="link-img">
+                                    </a>
+                                    <a href="https://youtu.be/ZhMIJHH7Opo" target="_blank">
+                                        <img src="./assets/youtube.svg" class="link-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-text">
+                            <p>My submission for Project 2 for CS50 Web Development. <br>
+                                Project 2: 'Design an eBay-like e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”'
+                                <br>
+                                Made with Django on July 2024.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paint-footer border" style="padding: 2px; margin-top: 1px;">
+                    <div class="paint-footer-main border" style="background-color: #cccccc;">
+                        <div style="background-color: black; height: 20px; width: 20px; position: relative; left: 10%; top: 10%;" class="border"></div>
+                        <div style="background-color: white; height: 20px; width: 20px; position: relative; left: 35%; top: -20%;" class="border"></div>
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: black;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: white;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: grey;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: silver;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: crimson"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: red;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: goldenrod;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: gold;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: green;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: greenyellow;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:cadetblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: cyan;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:darkblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: blue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:blueviolet;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: magenta;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="centered-hor" id="paint1">
+        <div class="border page hidden" style="height: auto;" id="cs50w1">
+            <div class="outline">
+                <div class="app" id="cs50w1header">
+                    untitled - Paint
+                    <span class="border button closebtn" onclick="closeProj(document.getElementById('cs50w1'))">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        <div class="proj-header">
+                            <img src="./assets/Screenshot_15.png" class="proj-img">
+                            <div class="proj-info">
+                                <h1>Project 1 - Wiki</h1>
+                                <div class="proj-links">
+                                    <a href="https://github.com/me50/matheusss14/tree/5709f6c52438d901931c623f1575745ac7096911" target="_blank">
+                                        <img src="./assets/github2.svg" class="link-img">
+                                    </a>
+                                    <a href="https://youtu.be/ZhMIJHH7Opo" target="_blank">
+                                        <img src="./assets/youtube.svg" class="link-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-text">
+                            <p>My submission for Project 1 for CS50 Web Development. <br>
+                                Project 1: 'Design a Wikipedia-like online encyclopedia.'
+                                <br>
+                                Multi-page Wiki website that allows the user to view different topics with a short description for each one of them. 
+                                Users can also create new pages and edit existing pages using GitHub's Markdown, which later gets converted to HTML.
+                                <br>
+                                Made with Django on July 2024.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paint-footer border" style="padding: 2px; margin-top: 1px;">
+                    <div class="paint-footer-main border" style="background-color: #cccccc;">
+                        <div style="background-color: black; height: 20px; width: 20px; position: relative; left: 10%; top: 10%;" class="border"></div>
+                        <div style="background-color: white; height: 20px; width: 20px; position: relative; left: 35%; top: -20%;" class="border"></div>
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: black;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: white;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: grey;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: silver;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: crimson"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: red;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: goldenrod;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: gold;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: green;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: greenyellow;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:cadetblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: cyan;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:darkblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: blue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:blueviolet;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: magenta;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+    <script src="./drag.js"></script>
+</body>
+</html>

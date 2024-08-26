@@ -1,0 +1,1040 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-image: url('../assets/bg.gif');
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 500;
+
+    overflow: hidden;
+}
+
+.centered-hor {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.border {
+    background-color: #cccccc;
+    border-top: 1.5px solid var(--border-light);
+    border-right: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
+    border-left: 1.5px solid var(--border-light);
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+}
+
+.fullsize {
+    width: 100%;
+}
+
+.navbar {
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+    position: relative;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+}
+
+.button__links {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger img {
+    height: 35px;
+}
+
+a {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .button {
+        width: 200px;
+    }
+
+    .navbar {
+        position: fixed;
+    }
+
+    .navbar__right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar__right.active {
+        position: relative;
+        top: 104px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .navbar__links {
+        display: none;
+
+    }
+
+    .navbar__links.active {
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+
+        position: relative; 
+        margin: 0;
+
+        top: 4px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+
+.intro {
+    height: 91vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page {
+    width: 400px;
+    
+}
+
+
+.outline {
+    border: 1px solid #cccccc;
+}
+
+.app {
+    background-color: var(--backgroundpage);
+
+    padding: 2px 2px 2px 8px;;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color: white;
+    padding: 4px 10px;
+    text-align: justify;
+    color: black;
+    line-height: 1.4;
+}
+
+.app_filler {
+    font-size: 0.8rem;
+    font-weight: 200;
+    margin: 5px;
+}
+
+.app_filler span {
+    padding: 5px;
+}
+
+.introimage img {
+    height: 350px; 
+    margin: 30px;
+}
+
+.app_content_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.app_content_links a {
+    aspect-ratio: 1 / 1;
+    width: 40px;
+    padding: 3px;
+    margin: 0px 5px;
+
+    border: 1px solid black;
+    border-radius: 10%;
+}
+
+.app_content_links img {
+    width: 40px;
+}
+
+.closebtn {
+    width: 22px;
+    height: 20px;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+.app_filler_tabs {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--lightsmallborder);
+    height: 17px;
+    padding: 2px 0;
+
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+
+    background-color: #cccccc;
+}
+
+.app_filler_tabs span {
+    margin: 0 5px;
+}
+
+.app_filler_tabs span::first-letter {
+    text-decoration: underline;
+}
+
+.app_filler_address {
+    background-color: #cccccc;
+    display: flex;
+    align-items: center;
+
+    padding: 2px;
+    height: 19px;
+
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.app_filler_address_input {
+    display: flex;
+    align-items: center;
+    height: 19px;
+    width: 100%;
+    background-color: white;
+
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.insideborder {
+    border: 1px solid var(--lightsmallborder);
+}
+
+/*start of wiki*/
+
+.browser {
+    background-color: #fff;
+    border: 1px solid black;
+    text-align: justify;
+    color: black;
+    line-height: 1.4;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.wiki-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 0;
+    
+    background-color: #eaecf0;
+}
+
+.wiki-header-content {
+    width: 60%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.wiki-ham {
+    display: block;
+
+    margin-right: 15px;
+}
+
+.bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 4px 0;
+    background-color: rgb(65, 65, 65);
+}
+
+.wiki-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.wiki-header-left h1 {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+
+    font-size: 1rem;
+}
+
+.wiki-header-left h1::first-letter {
+    font-size: 1.4rem;
+}
+
+.wiki-search {
+    display: flex;
+    align-items: center;
+
+    background-color: white;
+
+    border: 1px solid #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+
+    margin-left: 30px;
+}
+
+.wiki-search-input {
+    border: none;
+    padding: 5px;
+    padding-right: 70px;
+}
+
+
+.wiki-main p {
+    text-align: justify;
+    font-size: 0.85rem;;
+}
+
+.wiki-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 1.5%;
+}
+
+.wiki-main-content {
+    width: 60%;
+    height: 700px;
+
+    font-family: "Times New Roman", sans-serif;
+}
+
+.wiki-main-content .wiki-intro h1 {
+    font-size: 1.4rem;
+}
+
+.wiki-intro span {
+    font-size: 1rem;
+    color: #54595d;
+}
+
+.wiki-intro-divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    border-top: 1px solid #eaecf0;
+    border-bottom: 1px solid #c8ccd1;
+    color: #54595d;
+    margin-top: 5px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.wiki-intro-diviser-helper {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #54595d;
+
+    font-size: 1rem;
+}
+
+.spacing {
+    margin: 0 10px;
+}
+
+.smallerspacing {
+    margin: 0 3px;
+}
+
+.iconsSmall {
+    font-size: 1.3rem;
+}
+
+.wiki-short-intro {
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.wiki-border {
+    border: 1px solid #eaecf0;
+}
+
+.wiki-info {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-top: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wiki-card {
+    width: 35%;
+    background-color: #f8f9fa;
+    border: 1px solid #eaecf0;
+    border-radius: 3px 3px 0 0;
+
+    margin-bottom: 60px;
+}
+
+.wiki-text {
+    width: 65%;
+    line-height: 1.3;
+}
+
+.wiki-card-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+
+    font-weight: 600;
+}
+
+.wiki-card-info-tab {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+}
+
+.wiki-card-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    text-align: start;
+}
+
+.wiki-card-info-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 5px 10px;
+
+    text-align: center;
+}
+
+.wiki-card-info-subtitle {
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 5px 10px;
+}
+
+@media (max-width: 768px) {
+    .wiki-info {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .wiki-card {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .wiki-text {
+        width: 100%;
+    }
+}
+
+.collapsible {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #202122;
+    cursor: pointer;
+    width: 95%;
+    text-align: left;
+    font-size: 1.4rem;
+    font-family: "Times New Roman", sans-serif;;
+
+    border: none;
+    border-bottom: 1px solid #c8ccd1;
+
+    padding: 10px 5px;
+  }
+
+.collapsible2 {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #202122;
+    cursor: pointer;
+    width: 95%;
+    text-align: left;
+    font-size: 1.4rem;
+    font-family: "Times New Roman", sans-serif;;
+
+    border: none;
+    border-bottom: 1px solid #c8ccd1;
+
+    padding: 10px 5px;
+  }
+
+.wiki-text-about {
+    width: 95%;
+    display: none;
+    overflow: hidden;
+
+    padding: 20px 0;
+  }
+
+.wiki-text-about h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+/* end of wiki*/
+
+.projects {
+    display: flex;
+    height: 550px;
+}
+.projects-intro {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    background-image: url("../assets/fileexplorerbg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 50% 100%;
+
+}
+
+.projects-intro h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.projects-intro-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25%;
+    margin-left: 10%;
+    margin-bottom: 8%;
+    width: 50%;
+    justify-content: center;
+}
+
+.project-list {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.project-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0 5px 0;
+    margin: 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+    height: 250px;
+}
+
+.project-entry img {
+    height: 200px;
+}
+
+.projects-intro-borders {
+    display: flex;
+}
+.pborder {
+    width: 70px;
+    height: 3px;
+}
+.red {
+    background-color: #ea6c50;
+}
+.yellow {
+    background-color: #fbda55;
+}
+.green {
+    background-color: #99dd77;
+}
+.blue {
+    background-color: #55bbff;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.activebtn {
+    background-color: #afafaf;
+    border-bottom: 1.5px solid var(--border-light);
+    border-left: 1.5px solid var(--border-dark);
+    border-top: 1.5px solid var(--border-dark);
+    border-right: 1.5px solid var(--border-light);
+}
+
+#dragNote {
+    position: absolute;
+    z-index: 1;
+    width: 400px;
+}
+
+#aboutPage {
+    position: absolute;
+    z-index: 1;
+    width: 1200px;
+}
+
+#projPage {
+    position: absolute;
+    z-index: 1;
+    width: 1200px;
+}
+
+.higherIndex {
+    z-index: 999;
+}
+
+.startingPos {
+    top: 87px;
+    left: 359px;
+}
+
+.paint-main {
+    display: flex;
+}
+
+.paint-left {
+    width: 5%;
+    height: 100%;
+    border: 1px solid var(--lightsmallborder);
+
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.paint-filler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+}
+
+.paint-space {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 95%;
+    height: 600px;
+    padding: 20px;
+
+    overflow: hidden;
+}
+
+.proj-header {
+    width: 65%;
+}
+
+.proj-img {
+    width: 100%;
+    border: 1px solid rgb(165, 165, 165);
+}
+
+.proj-info {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.proj-info h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.link-img {
+    width: 30px;
+    padding: 2px;
+
+    border: 1px solid grey;
+}
+
+.proj-text {
+    width: 30%;
+    margin-left: 20px;
+}
+
+.paint-footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.paint-footer-filler {
+    display: grid;
+    grid: repeat(2, 22px) / auto-flow 22px;
+}
+
+.paint-filler-color {
+    width: 15px;
+    height: 15px;
+}
+
+.paint-footer-main {
+    height: 40px;
+    width: 40px;
+    padding: 1px;
+}
+
+.app_filler_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 60px;
+}
+
+.app_filler_icons span::first-letter {
+    text-decoration: none;
+}
+
+.app_filler_icons img {
+    aspect-ratio: 1 / 1;
+    height: 20px;
+    width: 20px;
+}
+
+.app_filler_address_input span {
+    padding: 5px 1px;
+}
+
+#proj1 {
+    position: absolute;
+    top: 87px;
+    left: 359px;
+}
+
+#cs50w2 {
+    position: absolute;
+    top: 87px;
+    left: 359px;
+}
+
+#projects {
+    top: 177px;left: 357px;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto;
+    }
+    #dragNote {
+        position: inherit;
+        width: 85vw;
+    }
+    
+    #aboutPage {
+        top: auto;
+        left: auto;
+    }
+
+    #projPage {
+        top: auto;
+        left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .project-list {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .project-entry img {
+        height: 130px;
+    }
+
+    .project-entry {
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+    }
+
+    .introimage {
+        height: 200px;
+    }
+
+    .introimage img {
+        height: auto;
+    }
+
+    .page {
+        width: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .app_content_links a {
+        width: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .page {
+        margin: 30px;
+    }
+
+
+}
+
+
+@media (max-width: 768px) {
+    .wiki-intro-divider {
+        height: 35px;
+    }
+
+    .wiki-main-content {
+        width: 90%;
+
+        height: auto;
+    }
+
+    .wiki-intro-diviser-helper {
+        display: none;
+    }
+
+    #download {
+        display: none;
+    }
+}
+
+#aboutPage {
+    top: 82px;
+    left: 369px;
+}
+
+#proj1 {
+    width: 1200px;
+}
+
+#cs50w2 {
+    width: 1200px;
+}
+
+#cs50w1 {
+    width: 1200px;
+    position: absolute;
+    top: 87px;
+    left: 359px;
+}
+
+#proj2 {
+    width: 1200px;
+    position: absolute;
+    top: 87px;
+    left: 359px;
+}
+
+@media (max-width: 768px) {
+    #cs50w1 {
+        top: auto;
+        left: auto;
+    }
+
+    #cs50w2 {
+        top: auto;
+        left: auto;
+    }
+
+    #proj1 {
+        top: auto;
+        left: auto;
+    }
+    
+    #proj2 {
+        top: auto;
+        left: auto;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    #aboutPage {
+        width: 99vw;
+        top: auto;
+        left: auto;
+    }
+
+    #projPage {
+        width: 99vw;
+    }
+
+    #proj1 {
+        width: 99vw;
+    }
+
+    .outline {
+        width: 99vw;
+    }
+
+    .wiki-header-content {
+        width: 90%;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .wiki-search {
+        background-color: #eaecf0;
+
+        padding: 5px;
+        border: 0px solid;
+    }
+
+    .wiki-search-input {
+        display: none;
+    }
+
+    .page {
+        margin: 0;
+        margin-top: 2px;
+        z-index: 1;
+    }
+
+    .browser {
+        height: 82.8vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .paint-left {
+        display: none;
+    }
+    .paint-space {
+        flex-direction: column;
+        align-items: center;
+        height: 79.9vh;
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .proj-header {
+        width: auto;
+    }
+
+    .proj-text {
+        width: 90%;
+    }
+
+    #projects {
+        top: auto;
+        left: 1px;
+        width: 99vw;
+    }
+}
+
+@media (max-width: 768px) {
+    #aboutPage {
+        width: 99vw;
+        top: auto;
+        left: auto;
+    }
+
+    #projPage {
+        width: 99vw;
+    }
+
+    #proj1 {
+        width: 99vw;
+    }
+
+    .paint-space {
+        padding: 0;
+        justify-content: start;
+        align-items: normal;
+    }
+
+    .proj-info {
+        justify-content: space-around;
+    }
+
+    .projects {
+        height: 74.8vh;
+    }
+}
