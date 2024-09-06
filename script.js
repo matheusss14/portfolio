@@ -2,7 +2,7 @@ const home = document.getElementById('intro');
 const about = document.getElementById('about');
 const projects = document.getElementById('projects');
 const notepad = document.getElementById('notepad');
-const contact = document.getElementById('contact');
+const contact = document.getElementById('contactSection');
 var all = document.querySelectorAll('*')
 const navbar = document.querySelector('.navbar')
 
@@ -95,6 +95,10 @@ function showContact() {
         navbar.style.zIndex = 1000
       })
       contact.style.zIndex = 2;
+}
+
+function hideContact() {
+    contact.classList.add('hidden');
 }
 
 function hideProjects() {

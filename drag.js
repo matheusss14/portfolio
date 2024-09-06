@@ -1,6 +1,7 @@
 dragElement(document.getElementById("dragNote"));
 dragElement(document.getElementById("aboutPage"));
 dragElement(document.getElementById("projPage"));
+dragElement(document.getElementById("contactP"));
 dragElement(document.getElementById("proj1"));
 dragElement(document.getElementById("proj2"));
 dragElement(document.getElementById("cs50w0"));

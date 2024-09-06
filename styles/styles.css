@@ -646,6 +646,12 @@ a {
     width: 400px;
 }
 
+#contactP {
+    position: absolute;
+    z-index: 1;
+    width: 400px;
+}
+
 #aboutPage {
     position: absolute;
     z-index: 1;
@@ -799,6 +805,11 @@ a {
         overflow: auto;
     }
     #dragNote {
+        position: inherit;
+        width: 85vw;
+    }
+
+    #contactP {
         position: inherit;
         width: 85vw;
     }
@@ -1067,12 +1078,4 @@ a {
     .projects {
         height: 74.8vh;
     }
-}
-
-.contact {
-    width: 100%;
-    background-color: var(--darker-section);
-    padding-top: 50px;
-    padding-bottom: 100px;
-    text-align: center;
 }
