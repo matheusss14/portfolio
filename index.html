@@ -1188,7 +1188,8 @@
 
     <script>
         window.onload = () => {
-            document.getElementById('loading-screen').style.display = 'none'
+            document.getElementById('loading-screen').style.opacity = 0
+            setTimeout(() => document.getElementById('loading-screen').style.display = 'none', 150)
             document.getElementById('maincontento').style.display = 'block'
         }
     </script>
