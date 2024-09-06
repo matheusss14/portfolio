@@ -2,6 +2,9 @@ const home = document.getElementById('intro');
 const about = document.getElementById('about');
 const projects = document.getElementById('projects');
 const notepad = document.getElementById('notepad');
+const contact = document.getElementById('contact');
+var all = document.querySelectorAll('*')
+const navbar = document.querySelector('.navbar')
 
 function nameClick() {
     home.classList.remove('hidden');
@@ -11,21 +14,21 @@ function nameClick() {
 }
 
 function showHome() {
-    home.classList.remove('hidden');
-    notepad.classList.remove('hidden')
-    
     document.getElementById('homeBt').classList.add('activebtn')
     setTimeout(() => document.getElementById('homeBt').classList.remove('activebtn'), 150)
+
+    home.classList.toggle('hidden');
 
     if (window.innerWidth <= 767) {
         hideAbout();
         hideProjects();
         console.log('hi')
       }
-
+      all.forEach(element => {
+        element.style.zIndex = 1
+        navbar.style.zIndex = 1000
+      })
       home.style.zIndex = 2;
-      about.style.zIndex = 1;
-      projects.style.zIndex = 1;
 }
 
 function hideHome() {
@@ -47,9 +50,12 @@ function showAbout() {
         console.log('hi')
       }
 
+      all.forEach(element => {
+        element.style.zIndex = 1
+        navbar.style.zIndex = 1000
+      })
       about.style.zIndex = 2;
-      home.style.zIndex = 1;
-      projects.style.zIndex = 1;
+
 }
     
 function hideAbout() {
@@ -66,11 +72,31 @@ function showProjects() {
         hideHome();
         console.log('hi')
       }
-
+      all.forEach(element => {
+        element.style.zIndex = 1
+        navbar.style.zIndex = 1000
+      })
       projects.style.zIndex = 2;
-      home.style.zIndex = 1;
-      about.style.zIndex = 1;
 }
+
+function showContact() {
+    setTimeout(() => document.getElementById('contactBt').classList.remove('activebtn'), 150)
+    contact.classList.toggle('hidden');
+    document.getElementById('contactBt').classList.add('activebtn')
+
+    if (window.innerWidth <= 767) {
+        hideAbout();
+        hideHome();
+        hideProjects();
+        console.log('hi')
+      }
+      all.forEach(element => {
+        element.style.zIndex = 1
+        navbar.style.zIndex = 1000
+      })
+      contact.style.zIndex = 2;
+}
+
 function hideProjects() {
     projects.classList.add('hidden');
 }

@@ -3,24 +3,31 @@ dragElement(document.getElementById("aboutPage"));
 dragElement(document.getElementById("projPage"));
 dragElement(document.getElementById("proj1"));
 dragElement(document.getElementById("proj2"));
+dragElement(document.getElementById("cs50w0"));
 dragElement(document.getElementById("cs50w1"));
 dragElement(document.getElementById("cs50w2"));
+dragElement(document.getElementById("cs50w3"));
+dragElement(document.getElementById("cs50w4"));
+dragElement(document.getElementById("cs50w6"));
 
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var z = 1;
+  var all = document.querySelectorAll('*')
+
   if (document.getElementById(elmnt.id + "header")) {
     // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-
-
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
   }
 
   function dragMouseDown(e) {
+    all.forEach(element => {
+      element.style.zIndex = 1
+    })
     z++;
     document.getElementById(elmnt.id).style.zIndex = z;
     e = e || window.event;
@@ -31,7 +38,6 @@ function dragElement(elmnt) {
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
-
   }
 
   function elementDrag(e) {
@@ -45,16 +51,11 @@ function dragElement(elmnt) {
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-
-
   }
 
   function closeDragElement() {
     // stop moving when mouse button is released:
-
     document.onmouseup = null;
     document.onmousemove = null;
-
-
   }
 }

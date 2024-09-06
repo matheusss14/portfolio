@@ -18,7 +18,13 @@
     <link rel="stylesheet" href="./styles/vars.css">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
-<body style="position: absolute;">
+<body>
+    <div style="width: 100vw; height: 100vh; background-color: blue; transition: 0.5 ease; display: flex; justify-content: center; align-items: center;" id="loading-screen">
+        <h1 style="color: white; text-align: center; font-size: 3rem;">Loading...</h1>
+    </div>
+
+    <div style="position: absolute;" id="maincontento">
+
     <header class="centered-hor" style="height: 60px;">
         <nav class="navbar border fullsize">
             <div>
@@ -39,7 +45,7 @@
                     <a onclick="showHome()"><div class="button__links border" id="homeBt"><span>Home</span></div></a>
                     <a onclick="showAbout()"><div class="button__links border" id="aboutBt"><span>About</span></div></a>
                     <a onclick="showProjects()"><div class="button__links border" id="projBt"><span>Projects</span></div></a>
-                    <a><div class="button__links border"><span>Contact</span></div></a>
+                    <a onclick="showContact()"><div class="button__links border" id="contactBt"><span>Contact</span></div></a>
                 </div>
             </div>
         </nav>
@@ -65,7 +71,7 @@
     </header>
 
     <section class="centered-hor intro" id="intro">
-        <div class="introimage">
+        <div class="introimage ">
             <img src="./assets/welcome.gif" style=>
         </div>
 
@@ -106,7 +112,7 @@
     </section>
 
     <section class="centered-hor about hidden" id="about">
-        <div class="border page startingPos" style="height: auto;"  id="aboutPage">
+        <div class="border page startingPos" id="aboutPage">
             <div class="outline">
                 <div class="app" id="aboutPageheader">
                     <span>About Me - Internet Explorer</span>
@@ -245,7 +251,7 @@
                                                 <span>HTML + CSS</span> <br>
                                                 <span>JavaScript</span> <br>
                                                 <span>Django</span> <br>
-                                                <span>:]</span> <br>
+                                                <span>React</span> <br>
                                             </div>
                                         </div>
                                     </div>
@@ -407,7 +413,7 @@
                     <div class="project-list" id="folders">
                         <div class="project-entry" onclick="showFront()">
                             <img src="./assets/folder.png">
-                            <span>Front-end projects</span> 
+                            <span>Projects</span> 
                         </div>
                         <div class="project-entry" onclick="showCS50()">
                             <img src="./assets/folder.png">
@@ -416,6 +422,12 @@
                     </div>
 
                     <div class="project-list hidden" id="front">
+                        <div class="project-entry" onclick="showProj(document.getElementById('cs50w6'))">
+                            <img src="./assets/FinalProject.png">
+                            <span>
+                                Who-are-ya?-Counter-Strike.file (v2)
+                            </span> 
+                        </div>
                         <div class="project-entry" onclick="showProj(document.getElementById('proj1'))">
                             <img src="./assets/whoareya.png">
                             <span>Who-are-ya?-Counter-Strike.file</span> 
@@ -427,6 +439,24 @@
                     </div>
 
                     <div class="project-list hidden" id="CS50">
+                        <div class="project-entry" onclick="showProj(document.getElementById('cs50w6'))">
+                            <img src="./assets/FinalProject.png">
+                            <span>
+                                CS50W Final Project
+                            </span> 
+                        </div>
+                        <div class="project-entry" onclick="showProj(document.getElementById('cs50w4'))">
+                            <img src="./assets/Network.png">
+                            <span>
+                                CS50W Project 4 - Network
+                            </span> 
+                        </div>
+                        <div class="project-entry" onclick="showProj(document.getElementById('cs50w3'))">
+                            <img src="./assets/Mail.png">
+                            <span>
+                                CS50W Project 3 - Mail
+                            </span> 
+                        </div>
                         <div class="project-entry" onclick="showProj(document.getElementById('cs50w2'))">
                             <img src="./assets/Screenshot_14.png">
                             <span>
@@ -434,8 +464,12 @@
                             </span> 
                         </div>
                         <div class="project-entry" onclick="showProj(document.getElementById('cs50w1'))">
-                            <img src="./assets/weather.png">
+                            <img src="./assets/Screenshot_15.png">
                             <span>CS50W Project 1 - Wiki</span> 
+                        </div>
+                        <div class="project-entry" onclick="showProj(document.getElementById('cs50w0'))">
+                            <img src="./assets/Search.png">
+                            <span>CS50W Project 0 - Search</span> 
                         </div>
                     </div>
                 </div>
@@ -642,10 +676,10 @@
                             <div class="proj-info">
                                 <h1>Project 2 - Commerce</h1>
                                 <div class="proj-links">
-                                    <a href="https://github.com/me50/matheusss14/tree/5709f6c52438d901931c623f1575745ac7096911" target="_blank">
+                                    <a href="https://github.com/matheusss14/CS50W2-Commerce" target="_blank">
                                         <img src="./assets/github2.svg" class="link-img">
                                     </a>
-                                    <a href="https://youtu.be/ZhMIJHH7Opo" target="_blank">
+                                    <a href="https://youtu.be/lZCRzjA_kv8" target="_blank">
                                         <img src="./assets/youtube.svg" class="link-img">
                                     </a>
                                 </div>
@@ -654,7 +688,7 @@
                         <div class="proj-text">
                             <p>My submission for Project 2 for CS50 Web Development. <br>
                                 Project 2: 'Design an eBay-like e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”'
-                                <br>
+                                <br><br>
                                 Made with Django on July 2024.
                             </p>
                         </div>
@@ -726,7 +760,7 @@
                             <div class="proj-info">
                                 <h1>Project 1 - Wiki</h1>
                                 <div class="proj-links">
-                                    <a href="https://github.com/me50/matheusss14/tree/5709f6c52438d901931c623f1575745ac7096911" target="_blank">
+                                    <a href="https://github.com/matheusss14/CS50W1-Wiki" target="_blank">
                                         <img src="./assets/github2.svg" class="link-img">
                                     </a>
                                     <a href="https://youtu.be/ZhMIJHH7Opo" target="_blank">
@@ -741,7 +775,7 @@
                                 <br>
                                 Multi-page Wiki website that allows the user to view different topics with a short description for each one of them. 
                                 Users can also create new pages and edit existing pages using GitHub's Markdown, which later gets converted to HTML.
-                                <br>
+                                <br><br>
                                 Made with Django on July 2024.
                             </p>
                         </div>
@@ -776,6 +810,357 @@
         </div>
     </section>
 
+    <section class="centered-hor" id="paint1">
+        <div class="border page hidden" style="height: auto;" id="cs50w0">
+            <div class="outline">
+                <div class="app" id="cs50w0header">
+                    untitled - Paint
+                    <span class="border button closebtn" onclick="closeProj(document.getElementById('cs50w0'))">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        <div class="proj-header">
+                            <img src="./assets/Search.png" class="proj-img">
+                            <div class="proj-info">
+                                <h1>Project 0 - Search</h1>
+                                <div class="proj-links">
+                                    <a href="https://github.com/matheusss14/CS50W0-Search" target="_blank">
+                                        <img src="./assets/github2.svg" class="link-img">
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=XUUwjyy38N0" target="_blank">
+                                        <img src="./assets/youtube.svg" class="link-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-text">
+                            <p>My submission for Project 0 for CS50 Web Development. <br>
+                                Project 0: 'Design a front-end for Google Search, Google Image Search, and Google Advanced Search.'
+                                <br>
+                                Front-end recreation of Google's Search page. Simple HTML and CSS, using inputs and values to use Google's search engine.
+                                <br><br>
+                                Made on July 2024.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paint-footer border" style="padding: 2px; margin-top: 1px;">
+                    <div class="paint-footer-main border" style="background-color: #cccccc;">
+                        <div style="background-color: black; height: 20px; width: 20px; position: relative; left: 10%; top: 10%;" class="border"></div>
+                        <div style="background-color: white; height: 20px; width: 20px; position: relative; left: 35%; top: -20%;" class="border"></div>
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: black;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: white;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: grey;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: silver;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: crimson"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: red;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: goldenrod;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: gold;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: green;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: greenyellow;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:cadetblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: cyan;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:darkblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: blue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:blueviolet;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: magenta;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="centered-hor" id="paint1">
+        <div class="border page hidden" style="height: auto;" id="cs50w3">
+            <div class="outline">
+                <div class="app" id="cs50w3header">
+                    untitled - Paint
+                    <span class="border button closebtn" onclick="closeProj(document.getElementById('cs50w3'))">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        <div class="proj-header">
+                            <img src="./assets/Mail.png" class="proj-img">
+                            <div class="proj-info">
+                                <h1>Project 3 - Mail</h1>
+                                <div class="proj-links">
+                                    <a href="https://github.com/matheusss14/CS50W3-Mail" target="_blank">
+                                        <img src="./assets/github2.svg" class="link-img">
+                                    </a>
+                                    <a href="https://www.youtube.com/watch?v=26j3ZKjyy9w" target="_blank">
+                                        <img src="./assets/youtube.svg" class="link-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-text">
+                            <p>My submission for Project 3 for CS50 Web Development. <br>
+                                Project 3: 'Design a front-end for an email client that makes API calls to send and receive emails.'
+                                <br>
+                                Complete e-mail app that can Read and Send e-mails, Archive and Mark e-mails as read using a Django API.
+                                <br><br>
+                                Made with JavaScript consuming a Django API on July 2024.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paint-footer border" style="padding: 2px; margin-top: 1px;">
+                    <div class="paint-footer-main border" style="background-color: #cccccc;">
+                        <div style="background-color: black; height: 20px; width: 20px; position: relative; left: 10%; top: 10%;" class="border"></div>
+                        <div style="background-color: white; height: 20px; width: 20px; position: relative; left: 35%; top: -20%;" class="border"></div>
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: black;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: white;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: grey;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: silver;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: crimson"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: red;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: goldenrod;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: gold;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: green;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: greenyellow;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:cadetblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: cyan;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:darkblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: blue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:blueviolet;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: magenta;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="centered-hor" id="paint1">
+        <div class="border page hidden" style="height: auto;" id="cs50w4">
+            <div class="outline">
+                <div class="app" id="cs50w4header">
+                    untitled - Paint
+                    <span class="border button closebtn" onclick="closeProj(document.getElementById('cs50w4'))">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        <div class="proj-header">
+                            <img src="./assets/Network.png" class="proj-img">
+                            <div class="proj-info">
+                                <h1>Project 4 - Mail</h1>
+                                <div class="proj-links">
+                                    <a href="https://github.com/matheusss14/CS50W4-Network" target="_blank">
+                                        <img src="./assets/github2.svg" class="link-img">
+                                    </a>
+                                    <a href="https://youtu.be/YW193F6jdz4" target="_blank">
+                                        <img src="./assets/youtube.svg" class="link-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-text">
+                            <p>My submission for Project 4 for CS50 Web Development. <br>
+                                Project 4: 'Design a Twitter-like social network website for making posts and following users.'
+                                <br>
+                                Network that allows users to create posts, edit posts, delete posts, like posts, follow users, filter posts with following or not, etc.
+                                <br><br>
+                                Made with Django (for API) and JavaScript on August 2024.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paint-footer border" style="padding: 2px; margin-top: 1px;">
+                    <div class="paint-footer-main border" style="background-color: #cccccc;">
+                        <div style="background-color: black; height: 20px; width: 20px; position: relative; left: 10%; top: 10%;" class="border"></div>
+                        <div style="background-color: white; height: 20px; width: 20px; position: relative; left: 35%; top: -20%;" class="border"></div>
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: black;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: white;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: grey;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: silver;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: crimson"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: red;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: goldenrod;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: gold;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: green;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: greenyellow;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:cadetblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: cyan;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:darkblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: blue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:blueviolet;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: magenta;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="centered-hor" id="paint1">
+        <div class="border page hidden" style="height: auto;" id="cs50w6">
+            <div class="outline">
+                <div class="app" id="cs50w6header">
+                    untitled - Paint
+                    <span class="border button closebtn" onclick="closeProj(document.getElementById('cs50w6'))">X</span>
+                </div>
+                <div class="app_filler" style="margin: 0;">
+                    <div class="insideborder">
+                        <div class="app_filler_tabs">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Go</span>
+                            <span>Favorites</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paint-main">
+                    <div class="paint-left">
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                        <div class="paint-filler border"><img src="./assets/behance.svg"></div>
+                    </div>
+                    <div class="browser paint-space">
+                        <div class="proj-header">
+                            <img src="./assets/FinalProject.png" class="proj-img">
+                            <div class="proj-info">
+                                <h1>Project Final Project</h1>
+                                <div class="proj-links">
+                                    <a href="https://github.com/matheusss14/CS50-FinalProject" target="_blank">
+                                        <img src="./assets/github2.svg" class="link-img">
+                                    </a>
+                                    <a href="https://youtu.be/b-kmJmPQ5a8" target="_blank">
+                                        <img src="./assets/youtube.svg" class="link-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-text">
+                            <p>My submission for the Final Project for CS50 Web Development. <br>
+                                <br>
+                                Trivia game based on playfootball.games' Who are ya?, but Counter Strike based. 
+                                <br><br>
+                                Made with Django and JavaScript on August 2024.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paint-footer border" style="padding: 2px; margin-top: 1px;">
+                    <div class="paint-footer-main border" style="background-color: #cccccc;">
+                        <div style="background-color: black; height: 20px; width: 20px; position: relative; left: 10%; top: 10%;" class="border"></div>
+                        <div style="background-color: white; height: 20px; width: 20px; position: relative; left: 35%; top: -20%;" class="border"></div>
+                    </div>
+                    <div class="paint-footer-filler">
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: black;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: white;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: grey;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: silver;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: crimson"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: red;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: goldenrod;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: gold;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: green;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: greenyellow;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:cadetblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: cyan;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:darkblue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: blue;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color:blueviolet;"></div></div>
+                        <div class="paint-filler "><div class="paint-filler-color activebtn" style="background-color: magenta;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+
+    <script>
+        window.onload = () => {
+            document.getElementById('loading-screen').style.display = 'none'
+            document.getElementById('maincontento').style.display = 'block'
+        }
+    </script>
     <script src="./script.js"></script>
     <script src="./drag.js"></script>
 </body>

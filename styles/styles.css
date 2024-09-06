@@ -788,6 +788,7 @@ a {
     left: 359px;
 }
 
+
 #projects {
     top: 177px;left: 357px;
 }
@@ -889,22 +890,51 @@ a {
 }
 
 #proj1 {
-    width: 1200px;
+    width: 1000px;
 }
 
 #cs50w2 {
-    width: 1200px;
+    width: 1000px;
 }
 
 #cs50w1 {
-    width: 1200px;
+    width: 1000px;
     position: absolute;
     top: 87px;
     left: 359px;
 }
 
+#cs50w0 {
+    width: 1000px;
+    position: absolute;
+    top: 87px;
+    left: 359px;
+}
+
+#cs50w3 {
+    width: 1000px;
+    position: absolute;
+    top: 87px;
+    left: 359px;
+}
+
+#cs50w4 {
+    width: 1000px;
+    position: absolute;
+    top: 87px;
+    left: 359px;
+}
+
+#cs50w6 {
+    width: 1000px;
+    position: absolute;
+    top: 87px;
+    left: 359px;
+}
+
+
 #proj2 {
-    width: 1200px;
+    width: 1000px;
     position: absolute;
     top: 87px;
     left: 359px;
@@ -1037,4 +1067,12 @@ a {
     .projects {
         height: 74.8vh;
     }
+}
+
+.contact {
+    width: 100%;
+    background-color: var(--darker-section);
+    padding-top: 50px;
+    padding-bottom: 100px;
+    text-align: center;
 }
