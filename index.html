@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    <div style="width: 100vw; height: 100vh; background-color: blue; transition: 0.5 ease; display: flex; justify-content: center; align-items: center;" id="loading-screen">
+    <div style="width: 100vw; height: 100vh; background-color: blue;  transition: opacity 0.5s ease;; display: flex; justify-content: center; align-items: center;  position: fixed; z-index: 1001;" id="loading-screen">
         <h1 style="color: white; text-align: center; font-size: 3rem;">Loading...</h1>
     </div>
 
@@ -1188,9 +1188,14 @@
 
     <script>
         window.onload = () => {
-            document.getElementById('loading-screen').style.opacity = 0
-            setTimeout(() => document.getElementById('loading-screen').style.display = 'none', 150)
-            document.getElementById('maincontento').style.display = 'block'
+    // Delay to simulate loading time
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.opacity = 0;
+            setTimeout(() => {
+                    document.getElementById('loading-screen').style.display = 'none';
+                    document.getElementById('maincontento').style.display = 'block';
+                }, 500); // This should match the transition duration (0.5s)
+            }, 700); // Delay before starting the fade-out (1s)
         }
     </script>
     <script src="./script.js"></script>
